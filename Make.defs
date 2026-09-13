@@ -1,0 +1,5 @@
+# Если в .config включен CONFIG_EXAMPLES_I2CBYTE
+ifneq ($(CONFIG_EXAMPLES_I2CBYTE),)
+# Добавляем нашу папку в список собираемых приложений
+CONFIGURED_APPS += $(APPDIR)/examples/i2cbyte
+endif

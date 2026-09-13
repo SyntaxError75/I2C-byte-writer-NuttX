@@ -1,0 +1,23 @@
+# Определяем основную опцию для нашего приложения
+config EXAMPLES_I2CBYTE
+	bool "I2C byte writer example"
+	default n
+	depends on I2C  # Приложение зависит от включенного драйвера I2C
+	---help---
+		Enable the I2C byte writer example.
+
+if EXAMPLES_I2CBYTE  # Вложенные настройки, видны только если приложение включено
+
+config EXAMPLES_I2CBYTE_PROGNAME
+	string "Program name"
+	default "i2cbyte"
+
+config EXAMPLES_I2CBYTE_PRIORITY
+	int "Task priority"
+	default 100
+
+config EXAMPLES_I2CBYTE_STACKSIZE
+	int "Stack size (bytes)"
+	default 2048
+
+endif
